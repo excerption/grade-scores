@@ -7,8 +7,6 @@ using System.IO;
 
 namespace GradeScores.Interfaces
 {
-    // Interface allows us to create a factory to provide StreamWriter object created from correct source.
-    // It will be very useful in testing purposes.
     public interface ITextWriterFactory
     {
         TextWriter CreateTextWriterFromFilePath(string path);

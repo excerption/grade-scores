@@ -23,9 +23,9 @@ namespace GradeScores.Writers
         public void WriteStudents(IEnumerable<Student> students, string outputPath)
         {
             // There are could be some exceptions with file creation. 
-            // Path could be wrong or maybe we have not permissions to create the file.
-            // We could check it with File.Create method and handle all required exceptions,
-            // but in our case because we haven't any specific exceptions handler we could omit this check,
+            // Path could be wrong or maybe no permissions to create a file.
+            // I could check it with File.Create method and handle all required exceptions,
+            // but in this case because I haven't any specific exceptions handler I omitted this check,
             // because TextWriter will throw built-in exceptions for all this cases.
             using (var writer = _writer.CreateTextWriterFromFilePath(outputPath))
             {

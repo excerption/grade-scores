@@ -37,17 +37,12 @@ namespace GradeScores.Readers
 
             using (var reader = _reader.CreateTextReaderFromFilePath(inputPath))
             {
-                // Probably would be better to read data async or even better - keep two methods 
-                // to support both sync and async reading, but in our case we have just a console application
-                // which doing a single task so we can use sync methods here.
+                // It is better to support both sync and async reading, but in this case it is a console application
+                // which is doing a single task so I used only sync methods.
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] columns = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-                    // We should use String.Trim method because it is possible that we have both 
-                    // comma separator and comma followed with space separator in the CSV file.
-                    // Additionally we could trim only the first three columns, but in general case
-                    // we would trim all data.
                     for (int i = 0; i < columns.Length; i++)
                     {
                         columns[i] = columns[i].Trim();
@@ -55,8 +50,6 @@ namespace GradeScores.Readers
 
                     if (columns.Length < 3 || columns.Any(string.IsNullOrEmpty))
                     {
-                        // We couldn't make any debug output in the release configuration,
-                        // so it is better to use Debug class to output some specific information
                         Debug.WriteLine($"At line #{lineNumber} there are empty columns");
                         continue;
                     }

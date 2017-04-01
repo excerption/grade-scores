@@ -7,10 +7,10 @@ namespace GradeScores.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        // We conisder that score is just integer number and can be both positive and negative.
-        // In reality if we talk about student scores it likely should be positive number between 0 and 100. 
-        // In this case we have to add additional constraints on setter, but we haven't this restrictions in the task,
-        // so we will use integer without any additional constraints.
+        // I conisdered that score is just integer number and can be both positive and negative.
+        // In reality it is likely a positive number between 0 and 100. 
+        // In this case I have to add additional constraints on setter, but there is no such restriction within the requirments,
+        // so I used integer without any additional constraints.
         public int Score { get; set; }
 
         public override bool Equals(object obj)

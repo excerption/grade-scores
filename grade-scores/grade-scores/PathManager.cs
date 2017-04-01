@@ -31,9 +31,9 @@ namespace GradeScores
 
             string inputFileName = Path.GetFileNameWithoutExtension(file.Name);
 
-            // It is possible situation where there will be the invalid file name characters in the postfix string.
-            // We could check it by using Path.GetInvalidFileNameChars method and check each character, but in our case
-            // when we have fixed prefix and for code simplicity we omit this check.
+            // It is possible to have the invalid file name characters in the postfix string.
+            // I could check it by using Path.GetInvalidFileNameChars method and check each character, but in this case
+            // when I have fixed prefix and for code simplicity I omitted this check.
             string outputFileName = $"{inputFileName}-{postfix}.txt";
 
             string outputPath = Path.Combine(file.DirectoryName, outputFileName);

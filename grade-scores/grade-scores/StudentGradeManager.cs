@@ -14,9 +14,6 @@ namespace GradeScores
             _reader = reader;
             _writer = writer;
 
-            // We could create a layer of abstraction for student grader too for the cases where we want to have
-            // different graders, but sorting students is responsibility of the StudentGrader class and it looks better
-            // to add appropriate methods to this class with different rules of sorting.
             _grader = new StudentGrader();
         }
 
